@@ -23,6 +23,7 @@ class EmployeeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).cardColor,
       child: ListTile(
         leading: const CircleAvatar(child: Icon(Icons.person)),
         title: Text(employee.name),

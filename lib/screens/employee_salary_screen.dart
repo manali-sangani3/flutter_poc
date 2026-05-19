@@ -229,11 +229,13 @@ class _EmployeeSalaryScreenState extends State<EmployeeSalaryScreen> {
             const SizedBox(height: 10),
 
             infoCard(
+              context: context,
               title: "Highest Salary Employee (Record)",
               value: "${highest.$1} : ₹${highest.$2}",
             ),
 
             infoCard(
+              context: context,
               title: "Generic Method",
               value: printData<String>("Flutter Generics"),
             ),
@@ -251,16 +253,19 @@ class _EmployeeSalaryScreenState extends State<EmployeeSalaryScreen> {
             const SizedBox(height: 10),
 
             infoCard(
+              context: context,
               title: "Employee Names (map)",
               value: employeeNames.toString(),
             ),
 
             infoCard(
+              context: context,
               title: "High Earners (where)",
               value: highEarners.map((e) => e.name).toList().toString(),
             ),
 
             infoCard(
+              context: context,
               title: "Total Salary (fold)",
               value: "₹${totalSalaryNotifier.value}",
             ),
