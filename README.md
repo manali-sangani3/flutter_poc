@@ -268,7 +268,6 @@ Applied Features:
 
 ## Provider State Management
 Applied Features:
-- Counter State Management
 - Task Management
 - Dynamic List Updates
 - Add/Delete/Toggle Operations
