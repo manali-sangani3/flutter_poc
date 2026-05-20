@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+
 import '../model/task_model.dart';
 
 class AnalyticsResult {
@@ -14,16 +15,11 @@ class AnalyticsResult {
 }
 
 // Concurrency & Isolates
-Future<AnalyticsResult> generateAnalytics(
-    List<TaskModel> tasks,
-    ) async {
+Future<AnalyticsResult> generateAnalytics(List<TaskModel> tasks) async {
   return compute(_calculateAnalytics, tasks);
 }
 
-AnalyticsResult _calculateAnalytics(
-    List<TaskModel> tasks,
-    ) {
-
+AnalyticsResult _calculateAnalytics(List<TaskModel> tasks) {
   int completed = 0;
   int pending = 0;
 
@@ -35,9 +31,7 @@ AnalyticsResult _calculateAnalytics(
     }
   }
 
-  double productivity =
-      (completed / tasks.length) * 100;
-
+  double productivity = (completed / tasks.length) * 100;
 
   return AnalyticsResult(
     completed: completed,

@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/screens/employee_salary_screen.dart';
-import 'package:flutter_poc/screens/task_screen.dart';
+
+import '../model/topic_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  final VoidCallback onThemeChanged;
-  final bool isDark;
-
-  const HomeScreen({
-    super.key,
-    required this.onThemeChanged,
-    required this.isDark,
-  });
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final demos = [
-      {
-        "title": "Core Dart & Programming",
-        "screen": const EmployeeSalaryScreen(),
-      },
-      {
-        "title":
-            "Asynchronous & Concurrent Programming, UI Architecture & Advanced Rendering",
-        "screen": const TaskScreen(),
-      },
+    final List<TopicModel> demos = [
+      TopicModel(title: "Core Dart & Programming", route: "/core-dart"),
+
+      TopicModel(
+        title: "Asynchronous & Concurrent Programming",
+        route: "/async-programming",
+      ),
+
+      TopicModel(
+        title: "Accessibility & Localization",
+        route: "/accessibility",
+      ),
+
+      TopicModel(title: "Lifting State Up", route: "/counter"),
+      TopicModel(
+        title: "InheritedWidget & Context Propagation",
+        route: "/settings",
+      ),
+
+      TopicModel(title: "Provider State Management", route: "/provider"),
+      TopicModel(title: "Bloc/Cubit State Management", route: "/bloc"),
     ];
 
     return Scaffold(
@@ -31,23 +35,18 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Flutter Upskilling"),
         actions: [
           IconButton(
-            onPressed: onThemeChanged,
+            onPressed: () {
+              Navigator.pushNamed(context, '/settings');
+            },
 
-            icon: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
+            icon: AnimatedRotation(
+              turns: 1,
 
-              transitionBuilder: (child, animation) {
-                return ScaleTransition(
-                  scale: animation,
-                  child: FadeTransition(opacity: animation, child: child),
-                );
-              },
+              duration: const Duration(milliseconds: 500),
 
-              child: Icon(
-                isDark ? Icons.light_mode : Icons.dark_mode,
+              curve: Curves.easeInOut,
 
-                key: ValueKey(isDark),
-              ),
+              child: Icon(Icons.settings_rounded),
             ),
           ),
         ],
@@ -58,13 +57,16 @@ class HomeScreen extends StatelessWidget {
           final item = demos[index];
 
           return ListTile(
-            title: Text(item["title"] as String),
+            title: Text(item.title),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => item["screen"] as Widget),
-              );
+              /// ----------------------------
+              /// NAVIGATION & ROUTING
+              /// ----------------------------
+              ///
+              /// Navigates using named routes
+              ///
+              Navigator.pushNamed(context, demos[index].route);
             },
           );
         },

@@ -1,0 +1,24 @@
+{
+  "title": "Accessibility Demo",
+
+  "description":
+  "This screen demonstrates accessibility and localization support.",
+
+  "themeText": "Dark Theme",
+
+  "languageText": "Arabic Language",
+
+  "buttonText": "Continue",
+
+  "hello": "Hello {userName}",
+  "@hello": {
+    "description": "A message with a single parameter",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  }
+
+}

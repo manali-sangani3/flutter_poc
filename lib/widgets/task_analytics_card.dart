@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_poc/isolates/analytics_isolate.dart';
 import 'package:flutter_poc/theme/app_colors.dart';
 
@@ -27,81 +26,69 @@ class TaskAnalyticsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
 
         children: [
-
           /// Title
           const Text(
             "Task Analytics",
 
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
 
           const SizedBox(height: 16),
 
           /// Responsive Completed & Pending Layout
           LayoutBuilder(
-
             builder: (context, constraints) {
-
               /// Detect large screen
-              final isLargeScreen =
-                  constraints.maxWidth > 600;
+              final isLargeScreen = constraints.maxWidth > 600;
 
               return isLargeScreen
-
-              /// WEB / TABLET UI
+                  /// WEB / TABLET UI
                   ? Row(
-                mainAxisAlignment:
-                MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
 
-                children: [
+                      children: [
+                        Expanded(
+                          child: analyticsTile(
+                            "Completed",
+                            analytics.completed.toString(),
+                            AppColors.green,
+                            context,
+                          ),
+                        ),
 
-                  Expanded(
-                    child: analyticsTile(
-                      "Completed",
-                      analytics.completed.toString(),
-                      AppColors.green,
-                      context
-                    ),
-                  ),
+                        const SizedBox(width: 20),
 
-                  const SizedBox(width: 20),
-
-                  Expanded(
-                    child: analyticsTile(
-                      "Pending",
-                      analytics.pending.toString(),
-                      AppColors.orange,
-                        context
-                    ),
-                  ),
-                ],
-              )
-
-              /// MOBILE UI
+                        Expanded(
+                          child: analyticsTile(
+                            "Pending",
+                            analytics.pending.toString(),
+                            AppColors.orange,
+                            context,
+                          ),
+                        ),
+                      ],
+                    )
+                  /// MOBILE UI
                   : Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        analyticsTile(
+                          "Completed",
+                          analytics.completed.toString(),
+                          AppColors.green,
+                          context,
+                        ),
 
-                  analyticsTile(
-                    "Completed",
-                    analytics.completed.toString(),
-                    AppColors.green,
-                      context
-                  ),
+                        const SizedBox(height: 14),
 
-                  const SizedBox(height: 14),
-
-                  analyticsTile(
-                    "Pending",
-                    analytics.pending.toString(),
-                    AppColors.orange,
-                      context
-                  ),
-                ],
-              );
+                        analyticsTile(
+                          "Pending",
+                          analytics.pending.toString(),
+                          AppColors.orange,
+                          context,
+                        ),
+                      ],
+                    );
             },
           ),
 
@@ -110,38 +97,30 @@ class TaskAnalyticsCard extends StatelessWidget {
           /// Productivity Text
           Text(
             "Productivity : "
-                "${analytics.productivity.toStringAsFixed(1)}%",
+            "${analytics.productivity.toStringAsFixed(1)}%",
 
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.w600),
           ),
 
           const SizedBox(height: 12),
 
           /// Animated Productivity Bar
           TweenAnimationBuilder(
-
-            tween: Tween<double>(
-              begin: 0,
-              end: analytics.productivity / 100,
-            ),
+            tween: Tween<double>(begin: 0, end: analytics.productivity / 100),
 
             duration: const Duration(seconds: 1),
 
-            builder: (_, value, __) {
-
+            builder: (_, value, _) {
               return LinearProgressIndicator(
                 value: value,
                 minHeight: 10,
 
-                borderRadius:
-                BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(20),
               );
             },
           ),
         ],
-      )
+      ),
     );
   }
 }

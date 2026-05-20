@@ -1,10 +1,8 @@
-
 // ======================================================
 // REUSABLE EMPLOYEE CARD
 // CONST OPTIMIZATION
 // ======================================================
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../model/employee.dart';

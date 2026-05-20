@@ -170,10 +170,7 @@ class _TaskScreenState extends State<TaskScreen> with TickerProviderStateMixin {
                           )
                         : const Icon(Icons.analytics),
 
-                    label: Text(
-                      processing ? "Processing..." : "Analytics",
-                    ),
-
+                    label: Text(processing ? "Processing..." : "Analytics"),
                   ),
                 ),
               ],
@@ -190,8 +187,9 @@ class _TaskScreenState extends State<TaskScreen> with TickerProviderStateMixin {
                     position: Tween<Offset>(
                       begin: const Offset(0, 0.1),
                       end: Offset.zero,
-                    ).animate(animation), // Implicit animation (no use of controller)
+                    ).animate(animation),
 
+                    // Implicit animation (no use of controller)
                     child: child,
                   ),
                 );
@@ -205,106 +203,106 @@ class _TaskScreenState extends State<TaskScreen> with TickerProviderStateMixin {
                     ),
             ),
 
-          const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-            children: [
-              const Text(
-                "Today's Tasks",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-
-              /// Smooth task count animation
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-
-                child: Text(
-                  "${tasks.length} Tasks",
-
-                  key: ValueKey(tasks.length),
-
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w700),
+              children: [
+                const Text(
+                  "Today's Tasks",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-              ),
-            ],
-          ),
 
-          const SizedBox(height: 16),
+                /// Smooth task count animation
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 400),
 
-          /// Loading state
-          loading
-              ? const Expanded(
-                  child: Center(child: CircularProgressIndicator()),
-                )
-              : tasks.isEmpty
-              /// Empty state
-              ? Expanded(
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                  child: Text(
+                    "${tasks.length} Tasks",
 
-                      children: const [
-                        Icon(Icons.task_alt, size: 80, color: Colors.grey),
+                    key: ValueKey(tasks.length),
 
-                        SizedBox(height: 16),
-
-                        Text(
-                          "No Tasks Loaded",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                )
-              /// Animated task list
-              : Expanded(
-                  child: GridView.builder(
-                    itemCount: tasks.length,
+                ),
+              ],
+            ),
 
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: isMobile ? 1 : 2,
+            const SizedBox(height: 16),
 
-                      mainAxisSpacing: isMobile ? 0 : 4,
-                      crossAxisSpacing: 16,
+            /// Loading state
+            loading
+                ? const Expanded(
+                    child: Center(child: CircularProgressIndicator()),
+                  )
+                : tasks.isEmpty
+                /// Empty state
+                ? Expanded(
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
 
-                      childAspectRatio: isMobile ? 3.5 : 5,
+                        children: const [
+                          Icon(Icons.task_alt, size: 80, color: Colors.grey),
+
+                          SizedBox(height: 16),
+
+                          Text(
+                            "No Tasks Loaded",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
+                  )
+                /// Animated task list
+                : Expanded(
+                    child: GridView.builder(
+                      itemCount: tasks.length,
 
-                    itemBuilder: (_, index) {
-                      /*
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: isMobile ? 1 : 2,
+
+                        mainAxisSpacing: isMobile ? 0 : 4,
+                        crossAxisSpacing: 16,
+
+                        childAspectRatio: isMobile ? 3.5 : 5,
+                      ),
+
+                      itemBuilder: (_, index) {
+                        /*
                         Starts lower
                         ↓
                         Moves upward
                         ↓
                         Stops naturally
                          */
-                      return TweenAnimationBuilder(
-                        duration: Duration(milliseconds: 300 + (index * 50)),
+                        return TweenAnimationBuilder(
+                          duration: Duration(milliseconds: 300 + (index * 50)),
 
-                        // Each item gets a slightly longer delay.
-                        tween: Tween<double>(begin: 0, end: 1),
+                          // Each item gets a slightly longer delay.
+                          tween: Tween<double>(begin: 0, end: 1),
 
-                        builder: (context, value, child) {
-                          return Transform.translate(
-                            offset: Offset(0, 50 * (1 - value)),
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(0, 50 * (1 - value)),
 
-                            // controls vertical movement.
-                            child: Opacity(opacity: value, child: child),
-                          );
-                        },
+                              // controls vertical movement.
+                              child: Opacity(opacity: value, child: child),
+                            );
+                          },
 
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
 
-                          child: TaskCard(
-                            task: tasks[index],
+                            child: TaskCard(
+                              task: tasks[index],
 
                             onComplete: () {
                               setState(() {
@@ -312,21 +310,22 @@ class _TaskScreenState extends State<TaskScreen> with TickerProviderStateMixin {
                                     !tasks[index].completed;
                               });
 
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "${tasks[index].title} completed",
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      "${tasks[index].title} completed",
+                                    ),
                                   ),
-                                ),
-                              );
-                            },
+                                );
+                              },
+                            ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
-                ),
-        ]),
+          ],
+        ),
       ),
     );
   }

@@ -1,9 +1,10 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget infoCard({required String title, required String value, required BuildContext context}) {
+Widget infoCard({
+  required String title,
+  required String value,
+  required BuildContext context,
+}) {
   return Card(
     color: Theme.of(context).cardColor,
     margin: const EdgeInsets.only(bottom: 12),

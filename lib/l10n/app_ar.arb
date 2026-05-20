@@ -1,0 +1,25 @@
+{
+  "title": "عرض إمكانية الوصول",
+
+  "description":
+  "توضح هذه الشاشة دعم إمكانية الوصول والترجمة.",
+
+  "themeText": "الوضع الداكن",
+
+  "languageText": "اللغة الإنجليزية",
+
+  "buttonText": "متابعة",
+
+  "hello": "مرحبًا {userName}",
+
+  "@hello": {
+    "description": "رسالة تحتوي على متغير واحد",
+
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "أحمد"
+      }
+    }
+  }
+}

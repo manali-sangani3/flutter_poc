@@ -26,6 +26,19 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
   - [Design Patterns in UI](#design-patterns-in-ui)
   - [Responsive UI Design](#responsive-ui-design)
   - [Theme & Styling Architecture](#theme--styling-architecture)
+  - [Accessibility & Localization](#accessibility--localization)
+
+- [Navigation & Routing](#navigation--routing)
+  - [Navigation & Routing Architecture](#navigation--routing-architecture)
+
+- [State Management](#state-management)
+  - [Lifting State Up](#lifting-state-up)
+  - [InheritedWidget Basics](#inheritedwidget-basics)
+  - [InheritedWidget & Context](#inheritedwidget--context)
+  - [InheritedWidget & Context Propagation](#inheritedwidget--context-propagation)
+  - [Provider Basics](#provider-basics)
+  - [Provider State Management](#provider-state-management)
+  - [Bloc/Cubit Advanced Patterns](#bloc-cubit-advanced-patterns)
 
 - [Run Project](#run-project)
 
@@ -180,6 +193,104 @@ Implemented:
 - Global theme configuration
 
 ---
+
+## Accessibility & Localization
+Implemented:
+- Multi-language support
+- English & Arabic localization
+- RTL layout support
+- Semantic widgets
+- Accessible buttons & text
+- Adaptive UI for accessibility
+- Theme-aware UI rendering
+
+---
+
+# Navigation & Routing
+
+## Navigation & Routing Architecture
+Implemented:
+- Named route navigation
+- Centralized route management
+- Route-based screen navigation
+- Decoupled navigation architecture
+- Navigation using Navigator.pushNamed()
+
+---
+
+# State Management
+
+## Lifting State Up
+Implemented:
+- Shared parent-managed state
+- State synchronization between widgets
+- Callback-based state updates
+
+---
+
+## InheritedWidget Basics
+Implemented:
+- Global shared state
+- Custom InheritedWidget creation
+- updateShouldNotify()
+
+---
+
+## InheritedWidget & Context
+Implemented:
+- BuildContext-based state access
+- dependOnInheritedWidgetOfExactType()
+- Shared theme access across screens
+
+---
+
+## InheritedWidget & Context Propagation
+Implemented:
+- Global theme propagation
+- Automatic widget rebuilding
+- Context-based dependency tracking
+- Shared app-wide state updates
+
+---
+
+## Provider Basics
+Applied Features:
+- ChangeNotifier
+- ChangeNotifierProvider
+- Consumer
+- context.read()
+- context.watch()
+- notifyListeners()
+- Shared App State
+- Reactive UI Updates
+
+---
+
+## Provider State Management
+Applied Features:
+- Counter State Management
+- Task Management
+- Dynamic List Updates
+- Add/Delete/Toggle Operations
+- Centralized Business Logic
+- Optimized Widget Rebuilds
+- UI & Logic Separation
+
+---
+
+## Bloc Cubit Advanced Patterns
+Applied Features:
+- Cubit State Management
+- BlocBuilder
+- BlocListener
+- BlocConsumer
+- MultiBlocProvider
+- Loading/Success/Error States
+- Reactive Architecture
+- State Persistence
+- Async State Handling
+- Clean Architecture Pattern
+- Immutable State Updates
 
 # Run Project
 
