@@ -39,6 +39,8 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
   - [Provider Basics](#provider-basics)
   - [Provider State Management](#provider-state-management)
   - [Bloc/Cubit Advanced Patterns](#bloc-cubit-advanced-patterns)
+  - [Riverpod State Management](#riverpod-state-management)
+  - [Riverpod Advanced Patterns](#riverpod-advanced-patterns)
 
 - [Run Project](#run-project)
 
@@ -290,6 +292,39 @@ Applied Features:
 - Async State Handling
 - Clean Architecture Pattern
 - Immutable State Updates
+
+---
+
+## Riverpod State Management
+Applied Features:
+- ProviderScope
+- StateProvider
+- StateNotifierProvider
+- ConsumerWidget
+- WidgetRef
+- ref.watch()
+- ref.read()
+- Shared Reactive State
+- Centralized State Management
+- Reactive UI Updates
+- Dependency Injection
+
+---
+
+## Riverpod Advanced Patterns
+Applied Features:
+- FutureProvider
+- AsyncValue
+- StateNotifier
+- Derived Providers
+- Computed State
+- Immutable State Updates
+- Async State Handling
+- Provider Composition
+- Reactive Architecture
+- Clean Architecture Pattern
+- Business Logic Separation
+- Scalable State Management
 
 # Run Project
 
