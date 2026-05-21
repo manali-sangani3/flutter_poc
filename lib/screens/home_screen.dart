@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
 
       TopicModel(title: "Provider State Management", route: "/provider"),
       TopicModel(title: "Bloc/Cubit State Management", route: "/bloc"),
+      TopicModel(title: "Riverpod State Management", route: "/riverpod"),
     ];
 
     return Scaffold(

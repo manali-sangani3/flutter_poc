@@ -7,10 +7,12 @@ import 'package:flutter_poc/screens/counter_demo_screen.dart';
 import 'package:flutter_poc/screens/employee_salary_screen.dart';
 import 'package:flutter_poc/screens/employee_screen.dart';
 import 'package:flutter_poc/screens/home_screen.dart';
+import 'package:flutter_poc/screens/inventory_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
 import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
 import 'package:flutter_poc/theme/app_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
 
 import 'cubit/employee_cubit.dart';
@@ -19,12 +21,17 @@ import 'l10n/app_localizations.dart';
 
 void main() {
   runApp(
-    // Provides the AppProvider object to the widget tree.
-    //
-    // Makes state accessible globally.
-    ChangeNotifierProvider(
-      create: (_) => AppProvider(),
-      child: const MyApp(),
+    ProviderScope(
+      // Root container for all Riverpod providers.
+      //
+      // Required for Riverpod state access.
+      child: ChangeNotifierProvider(
+        // Provides the AppProvider object to the widget tree.
+        //
+        // Makes state accessible globally.
+        create: (_) => AppProvider(),
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -96,6 +103,8 @@ class _MyAppState extends State<MyApp> {
                 '/provider': (_) => const TodoScreen(),
 
                 '/bloc': (_) => const EmployeeScreen(),
+
+                '/riverpod': (_) => const InventoryScreen(),
               },
             );
           },
