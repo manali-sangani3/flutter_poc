@@ -18,6 +18,17 @@ class AppTheme {
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
     ),
+    dropdownMenuTheme: DropdownMenuThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+        isDense: true,
+      ),
+      menuStyle: MenuStyle(
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        ),
+      ),
+    ),
 
     cardColor: Colors.white,
 
@@ -56,6 +67,17 @@ class AppTheme {
       foregroundColor: Colors.white,
     ),
 
+    dropdownMenuTheme: DropdownMenuThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+        isDense: true,
+      ),
+      menuStyle: MenuStyle(
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        ),
+      ),
+    ),
     cardColor: const Color(0xff242731),
 
     elevatedButtonTheme: ElevatedButtonThemeData(

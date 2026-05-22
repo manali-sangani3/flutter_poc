@@ -28,4 +28,10 @@ class AppProvider extends ChangeNotifier {
     _tasks.removeAt(index);
     notifyListeners();
   }
+
+  @override
+  void notifyListeners() {
+    debugPrint("Provider Updated");
+    super.notifyListeners();
+  }
 }

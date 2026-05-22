@@ -6,6 +6,7 @@ import 'package:flutter_poc/screens/accessibility_localization_screen.dart';
 import 'package:flutter_poc/screens/counter_demo_screen.dart';
 import 'package:flutter_poc/screens/employee_salary_screen.dart';
 import 'package:flutter_poc/screens/employee_screen.dart';
+import 'package:flutter_poc/screens/expense_screen.dart';
 import 'package:flutter_poc/screens/home_screen.dart';
 import 'package:flutter_poc/screens/inventory_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
@@ -18,8 +19,10 @@ import 'package:provider/provider.dart';
 import 'cubit/employee_cubit.dart';
 import 'cubit/language_cubit.dart';
 import 'l10n/app_localizations.dart';
+import 'observer/app_bloc_observer.dart';
 
 void main() {
+  Bloc.observer = AppBlocObserver();
   runApp(
     ProviderScope(
       // Root container for all Riverpod providers.
@@ -105,6 +108,8 @@ class _MyAppState extends State<MyApp> {
                 '/bloc': (_) => const EmployeeScreen(),
 
                 '/riverpod': (_) => const InventoryScreen(),
+
+                '/mobx': (_) => ExpenseScreen(),
               },
             );
           },

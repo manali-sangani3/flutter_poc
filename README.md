@@ -21,36 +21,41 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [Animation & Transitions](#animation--transitions)
 
 - [UI Architecture & Advanced Rendering](#ui-architecture--advanced-rendering)
-  - [Widget Lifecycle & Rendering](#widget-lifecycle--rendering)
-  - [Widget Lifecycle & Rendering Architecture](#widget-lifecycle--rendering-architecture)
-  - [Design Patterns in UI](#design-patterns-in-ui)
-  - [Responsive UI Design](#responsive-ui-design)
-  - [Theme & Styling Architecture](#theme--styling-architecture)
-  - [Accessibility & Localization](#accessibility--localization)
+    - [Widget Lifecycle & Rendering](#widget-lifecycle--rendering)
+    - [Widget Lifecycle & Rendering Architecture](#widget-lifecycle--rendering-architecture)
+    - [Design Patterns in UI](#design-patterns-in-ui)
+    - [Responsive UI Design](#responsive-ui-design)
+    - [Theme & Styling Architecture](#theme--styling-architecture)
+    - [Accessibility & Localization](#accessibility--localization)
 
 - [Navigation & Routing](#navigation--routing)
-  - [Navigation & Routing Architecture](#navigation--routing-architecture)
+    - [Navigation & Routing Architecture](#navigation--routing-architecture)
 
 - [State Management](#state-management)
-  - [Lifting State Up](#lifting-state-up)
-  - [InheritedWidget Basics](#inheritedwidget-basics)
-  - [InheritedWidget & Context](#inheritedwidget--context)
-  - [InheritedWidget & Context Propagation](#inheritedwidget--context-propagation)
-  - [Provider Basics](#provider-basics)
-  - [Provider State Management](#provider-state-management)
-  - [Bloc/Cubit Advanced Patterns](#bloc-cubit-advanced-patterns)
-  - [Riverpod State Management](#riverpod-state-management)
-  - [Riverpod Advanced Patterns](#riverpod-advanced-patterns)
+    - [Lifting State Up](#lifting-state-up)
+    - [InheritedWidget Basics](#inheritedwidget-basics)
+    - [InheritedWidget & Context](#inheritedwidget--context)
+    - [InheritedWidget & Context Propagation](#inheritedwidget--context-propagation)
+    - [Provider Basics](#provider-basics)
+    - [Provider State Management](#provider-state-management)
+    - [Bloc/Cubit Advanced Patterns](#bloc-cubit-advanced-patterns)
+    - [Riverpod State Management](#riverpod-state-management)
+    - [Riverpod Advanced Patterns](#riverpod-advanced-patterns)
+    - [GetX/MobX](#getxmobx)
+    - [GetX/MobX Advanced Usage](#getxmobx-advanced-usage)
+    - [State Management Testing & Debugging](#state-management-testing--debugging)
+    - [Testing State Management](#testing-state-management)
 
 - [Run Project](#run-project)
 
 ---
 
-
 # Core Dart & Programming
 
 ## Advanced Dart Syntax & Features
+
 Implemented:
+
 - Records
 - Pattern Matching
 - Switch Expressions
@@ -59,13 +64,16 @@ Implemented:
 ---
 
 ## Object-Oriented Design in Dart
+
 Implemented:
+
 - Abstraction
 - Inheritance
 - Polymorphism
 - Encapsulation
 
 Classes:
+
 - Employee
 - Developer
 - Manager
@@ -73,7 +81,9 @@ Classes:
 ---
 
 ## Generics & Collections
+
 Implemented:
+
 - Generic Methods
 - List
 - map()
@@ -83,7 +93,9 @@ Implemented:
 ---
 
 ## Functional Programming in Dart
+
 Implemented:
+
 - Declarative Coding
 - Pure Collection Operations
 - Immutable-style transformations
@@ -91,7 +103,9 @@ Implemented:
 ---
 
 ## Memory & Performance Optimization
+
 Implemented:
+
 - dispose()
 - ValueNotifier
 - ValueListenableBuilder
@@ -104,7 +118,9 @@ Implemented:
 # Asynchronous & Concurrent Programming
 
 ## Asynchronous Programming & Isolates
+
 Implemented:
+
 - async / await
 - Future
 - Stream
@@ -113,7 +129,9 @@ Implemented:
 ---
 
 ## Concurrency & Isolates
+
 Implemented:
+
 - Background task execution
 - Data processing using isolates
 - Non-blocking UI operations
@@ -121,7 +139,9 @@ Implemented:
 ---
 
 ## Concurrency & Multithreading
+
 Implemented:
+
 - Parallel task execution
 - Efficient async handling
 - Thread-safe operations
@@ -129,7 +149,9 @@ Implemented:
 ---
 
 ## Custom Widgets & Composition
+
 Implemented:
+
 - Reusable widgets
 - Widget composition
 - Custom UI components
@@ -137,7 +159,9 @@ Implemented:
 ---
 
 ## Animation & Transitions
+
 Implemented:
+
 - AnimatedContainer
 - Fade & Scale Animations
 
@@ -146,7 +170,9 @@ Implemented:
 # UI Architecture & Advanced Rendering
 
 ## Widget Lifecycle & Rendering
+
 Implemented:
+
 - initState()
 - dispose()
 - didUpdateWidget()
@@ -156,7 +182,9 @@ Implemented:
 ---
 
 ## Widget Lifecycle & Rendering Architecture
+
 Implemented:
+
 - Widget tree rendering
 - BuildContext usage
 - Render optimization
@@ -166,7 +194,9 @@ Implemented:
 ---
 
 ## Design Patterns in UI
+
 Implemented:
+
 - Widget composition
 - Reusable component architecture
 - Service layer separation
@@ -177,7 +207,9 @@ Implemented:
 ---
 
 ## Responsive UI Design
+
 Implemented:
+
 - LayoutBuilder
 - MediaQuery
 - Adaptive layouts
@@ -187,7 +219,9 @@ Implemented:
 ---
 
 ## Theme & Styling Architecture
+
 Implemented:
+
 - Centralized theme management
 - Light & Dark theme support
 - Shared color system
@@ -197,7 +231,9 @@ Implemented:
 ---
 
 ## Accessibility & Localization
+
 Implemented:
+
 - Multi-language support
 - English & Arabic localization
 - RTL layout support
@@ -211,7 +247,9 @@ Implemented:
 # Navigation & Routing
 
 ## Navigation & Routing Architecture
+
 Implemented:
+
 - Named route navigation
 - Centralized route management
 - Route-based screen navigation
@@ -223,7 +261,9 @@ Implemented:
 # State Management
 
 ## Lifting State Up
+
 Implemented:
+
 - Shared parent-managed state
 - State synchronization between widgets
 - Callback-based state updates
@@ -231,7 +271,9 @@ Implemented:
 ---
 
 ## InheritedWidget Basics
+
 Implemented:
+
 - Global shared state
 - Custom InheritedWidget creation
 - updateShouldNotify()
@@ -239,7 +281,9 @@ Implemented:
 ---
 
 ## InheritedWidget & Context
+
 Implemented:
+
 - BuildContext-based state access
 - dependOnInheritedWidgetOfExactType()
 - Shared theme access across screens
@@ -247,7 +291,9 @@ Implemented:
 ---
 
 ## InheritedWidget & Context Propagation
+
 Implemented:
+
 - Global theme propagation
 - Automatic widget rebuilding
 - Context-based dependency tracking
@@ -256,7 +302,9 @@ Implemented:
 ---
 
 ## Provider Basics
+
 Applied Features:
+
 - ChangeNotifier
 - ChangeNotifierProvider
 - Consumer
@@ -269,7 +317,9 @@ Applied Features:
 ---
 
 ## Provider State Management
+
 Applied Features:
+
 - Task Management
 - Dynamic List Updates
 - Add/Delete/Toggle Operations
@@ -280,7 +330,9 @@ Applied Features:
 ---
 
 ## Bloc Cubit Advanced Patterns
+
 Applied Features:
+
 - Cubit State Management
 - BlocBuilder
 - BlocListener
@@ -296,7 +348,9 @@ Applied Features:
 ---
 
 ## Riverpod State Management
+
 Applied Features:
+
 - ProviderScope
 - StateProvider
 - StateNotifierProvider
@@ -312,7 +366,9 @@ Applied Features:
 ---
 
 ## Riverpod Advanced Patterns
+
 Applied Features:
+
 - FutureProvider
 - AsyncValue
 - StateNotifier
@@ -325,6 +381,71 @@ Applied Features:
 - Clean Architecture Pattern
 - Business Logic Separation
 - Scalable State Management
+
+---
+
+## GetX/MobX
+
+Applied Features:
+
+- Observable State Management
+- Reactive UI Updates
+- Observer Widgets
+- Actions & State Mutation
+- Computed State
+- Encapsulated Business Logic
+- Automatic UI Rebuilding
+- Shared Reactive State
+
+---
+
+## GetX/MobX Advanced Usage
+
+Applied Features:
+
+- ObservableList
+- Async Actions
+- Computed Properties
+- Reactive Architecture
+- State Derivation
+- Business Logic Separation
+- Automatic Dependency Tracking
+- Optimized Widget Rebuilds
+- Reactive State Monitoring
+- Clean Architecture Pattern
+
+---
+
+## State Management Testing & Debugging
+
+Applied Features:
+
+- Provider State Debugging
+- BlocObserver Logging
+- Riverpod Provider Inspection
+- MobX Reactive Debugging
+- State Transition Monitoring
+- Error State Tracking
+- Async State Debugging
+- Widget Rebuild Analysis
+- DebugPrint Logging
+
+---
+
+## Testing State Management
+
+Applied Features:
+
+- Unit Testing
+- Widget Testing
+- Cubit Testing
+- Provider Testing
+- Riverpod Provider Testing
+- MobX Store Testing
+- Async State Testing
+- State Transition Validation
+- Business Logic Verification
+- UI Rendering Validation
 
 # Run Project
 

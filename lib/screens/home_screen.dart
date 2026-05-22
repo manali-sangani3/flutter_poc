@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "Provider State Management", route: "/provider"),
       TopicModel(title: "Bloc/Cubit State Management", route: "/bloc"),
       TopicModel(title: "Riverpod State Management", route: "/riverpod"),
+      TopicModel(title: "MobX State Management", route: "/mobx"),
     ];
 
     return Scaffold(
@@ -58,7 +59,10 @@ class HomeScreen extends StatelessWidget {
           final item = demos[index];
 
           return ListTile(
-            title: Text(item.title),
+            title: Text(
+              item.title,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
               /// ----------------------------
