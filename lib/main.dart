@@ -9,6 +9,8 @@ import 'package:flutter_poc/screens/employee_screen.dart';
 import 'package:flutter_poc/screens/expense_screen.dart';
 import 'package:flutter_poc/screens/home_screen.dart';
 import 'package:flutter_poc/screens/inventory_screen.dart';
+import 'package:flutter_poc/screens/library_screen.dart';
+import 'package:flutter_poc/screens/movie_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
 import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
@@ -19,9 +21,12 @@ import 'package:provider/provider.dart';
 import 'cubit/employee_cubit.dart';
 import 'cubit/language_cubit.dart';
 import 'l10n/app_localizations.dart';
+import 'locator/service_locator.dart';
 import 'observer/app_bloc_observer.dart';
 
 void main() {
+  // A centralized object that provides dependencies globally.
+  setupLocator();
   Bloc.observer = AppBlocObserver();
   runApp(
     ProviderScope(
@@ -109,7 +114,11 @@ class _MyAppState extends State<MyApp> {
 
                 '/riverpod': (_) => const InventoryScreen(),
 
-                '/mobx': (_) => ExpenseScreen(),
+                '/mobx': (_) => const ExpenseScreen(),
+
+                '/dependency_injection': (_) => LibraryScreen(),
+
+                '/rest-graph': (_) => MovieScreen(),
               },
             );
           },

@@ -23,7 +23,7 @@ class CartNotifier extends StateNotifier<List<ProductModel>> {
     } else {
       product.quantity = 1;
 
-      state = [...state, product];
+      state = [...state, product]; // Create a new list with old items + new product
     }
   }
 
@@ -32,6 +32,7 @@ class CartNotifier extends StateNotifier<List<ProductModel>> {
   }
 }
 
+// used to manage and expose state from a StateNotifier.
 final cartProvider = StateNotifierProvider<CartNotifier, List<ProductModel>>((
   ref,
 ) {

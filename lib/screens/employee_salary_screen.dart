@@ -70,7 +70,7 @@ class _EmployeeSalaryScreenState extends State<EmployeeSalaryScreen> {
   void calculateTotalSalary() {
     final total = employees
         .map((e) => e.salary)
-        .fold(0.0, (prev, element) => prev + element);
+        .fold(0.0, (prev, element) => prev + element); // Reduce list into single value
 
     totalSalaryNotifier.value = total;
   }
@@ -103,11 +103,11 @@ class _EmployeeSalaryScreenState extends State<EmployeeSalaryScreen> {
 
   // ======================================================
   // ADVANCED DART
-  // RECORDS
+  // RECORDS Dart Records for multiple return values without creating an additional model class
   // ======================================================
 
   (String, double) highestSalaryEmployee() {
-    employees.sort((a, b) => b.salary.compareTo(a.salary));
+    employees.sort((a, b) => b.salary.compareTo(a.salary)); // desc order
 
     return (employees.first.name, employees.first.salary);
   }

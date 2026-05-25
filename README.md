@@ -46,6 +46,13 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [State Management Testing & Debugging](#state-management-testing--debugging)
     - [Testing State Management](#testing-state-management)
 
+- [Architecture & Design](#architecture--design)
+    - [Dependency Injection & Service Locator Patterns](#dependency-injection--service-locator-patterns)
+
+- [Backend & Networking](#backend--networking)
+    - [REST API & GraphQL Integration](#rest-api--graphql-integration)
+
+
 - [Run Project](#run-project)
 
 ---
@@ -446,6 +453,46 @@ Applied Features:
 - State Transition Validation
 - Business Logic Verification
 - UI Rendering Validation
+
+---
+
+# Architecture & Design
+
+## Dependency Injection & Service Locator Patterns
+Applied Features:
+- Dependency Injection (DI)
+- Service Locator Pattern
+- GetIt Integration
+- Repository Pattern
+- Lazy Singleton Registration
+- Constructor Injection
+- Loose Coupling
+- Shared Service Management
+- Clean Architecture
+- Testable Business Logic
+
+---
+
+# Backend & Networking
+
+# REST API & GraphQL Integration
+
+Implemented:
+- REST API Integration
+- HTTP Networking
+- JSON Parsing
+- Async/Await API Calls
+- Repository Pattern
+- Service Layer Architecture
+- GraphQL Query Integration
+- GraphQL Mutation Integration
+- GraphQL Client Setup
+- Dynamic Query Variables
+- Loading/Error State Handling
+- Clean API Architecture
+- Reactive API Updates
+
+---
 
 # Run Project
 

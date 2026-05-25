@@ -17,7 +17,7 @@ autorun((_) {
 });
  */
 class ExpenseScreen extends StatefulWidget {
-  ExpenseScreen({super.key});
+  const ExpenseScreen({super.key});
 
   @override
   State<ExpenseScreen> createState() => _ExpenseScreenState();
@@ -32,6 +32,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   void initState() {
     super.initState();
 
+    // Debugging
     disposer = reaction((_) => store.totalExpense, (value) {
       debugPrint('Total Changed: $value');
     });

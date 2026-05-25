@@ -25,6 +25,7 @@ class AppState extends InheritedWidget {
     return result!;
   }
 
+  // notify widgets that inherit from this widget.
   @override
   bool updateShouldNotify(
       AppState oldWidget,

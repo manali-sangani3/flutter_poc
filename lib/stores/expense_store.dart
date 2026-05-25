@@ -6,9 +6,8 @@ part 'expense_store.g.dart';
 
 class ExpenseStore = _ExpenseStore with _$ExpenseStore;
 
-abstract class _ExpenseStore with Store {
+abstract class _ExpenseStore with Store /* The Store mixin is primarily meant for code-generation and used as part of the mobx_codegen package*/{
   @observable // Marks variables as reactive state.
-
   //ObservableList: Reactive list that automatically updates UI.
   ObservableList<ExpenseModel> expenses = ObservableList<ExpenseModel>();
 
