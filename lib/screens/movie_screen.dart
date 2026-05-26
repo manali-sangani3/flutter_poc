@@ -42,7 +42,7 @@ class _MovieScreenState extends State<MovieScreen> {
     try {
       final movieData = await repository.fetchMovies();
 
-      final countryData = await repository.fetchCountries();
+      final countryData = await repository.fetchPosts();
 
       setState(() {
         movies = movieData;

@@ -51,6 +51,8 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
 
 - [Backend & Networking](#backend--networking)
     - [REST API & GraphQL Integration](#rest-api--graphql-integration)
+    - [GraphQL & WebSocket Integration](#graphql--websocket-integration)
+    - [Offline Handling & Caching](#offline-handling--caching)
 
 
 - [Run Project](#run-project)
@@ -491,6 +493,36 @@ Implemented:
 - Loading/Error State Handling
 - Clean API Architecture
 - Reactive API Updates
+- Token Refreshing
+
+---
+
+# GraphQL & WebSocket Integration
+
+Implemented:
+- GraphQL Queries
+- WebSocket Integration
+- Real-time Streaming
+- StreamBuilder
+- Async Reactive Updates
+- Repository Pattern
+- Service Layer Architecture
+- Dynamic Query Variables
+- Clean Networking Architecture
+
+---
+
+# Offline Handling & Caching
+
+Implemented:
+- Hive NoSQL Database
+- Offline-first Architecture
+- API Response Caching
+- Local Persistent Storage
+- Network Failure Recovery
+- Cache-first Strategy
+- Repository Pattern
+- Resilient Networking Architecture
 
 ---
 

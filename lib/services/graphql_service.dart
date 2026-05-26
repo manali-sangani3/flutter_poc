@@ -8,7 +8,7 @@ class GraphqlService {
     link: HttpLink('https://graphqlzero.almansi.me/api'),
   );
 
-  Future<List<dynamic>> fetchCountries() async {
+  Future<List<dynamic>> fetchPosts() async {
     const query = r'''
       query{
   posts{

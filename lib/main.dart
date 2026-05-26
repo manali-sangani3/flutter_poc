@@ -4,6 +4,7 @@ import 'package:flutter_poc/inherited/app_state.dart';
 import 'package:flutter_poc/provider/app_provider.dart';
 import 'package:flutter_poc/screens/accessibility_localization_screen.dart';
 import 'package:flutter_poc/screens/counter_demo_screen.dart';
+import 'package:flutter_poc/screens/crypto_screen.dart';
 import 'package:flutter_poc/screens/employee_salary_screen.dart';
 import 'package:flutter_poc/screens/employee_screen.dart';
 import 'package:flutter_poc/screens/expense_screen.dart';
@@ -16,6 +17,7 @@ import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
 import 'package:flutter_poc/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'cubit/employee_cubit.dart';
@@ -24,10 +26,15 @@ import 'l10n/app_localizations.dart';
 import 'locator/service_locator.dart';
 import 'observer/app_bloc_observer.dart';
 
-void main() {
+void main() async {
   // A centralized object that provides dependencies globally.
   setupLocator();
   Bloc.observer = AppBlocObserver();
+
+  await Hive.initFlutter();
+
+  await Hive.openBox('productsBox');
+
   runApp(
     ProviderScope(
       // Root container for all Riverpod providers.
@@ -119,6 +126,8 @@ class _MyAppState extends State<MyApp> {
                 '/dependency_injection': (_) => LibraryScreen(),
 
                 '/rest-graph': (_) => MovieScreen(),
+
+                '/graph-websocket': (_) => CryptoScreen(),
               },
             );
           },

@@ -13,7 +13,7 @@ class MovieRepository {
     return restApi.fetchMovies();
   }
 
-  Future<List<dynamic>> fetchCountries() {
-    return graphql.fetchCountries();
+  Future<List<dynamic>> fetchPosts() {
+    return graphql.fetchPosts();
   }
 }

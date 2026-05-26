@@ -31,7 +31,8 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "Riverpod State Management", route: "/riverpod"),
       TopicModel(title: "MobX State Management", route: "/mobx"),
       TopicModel(title: "Dependency Injection", route: "/dependency_injection"),
-      TopicModel(title: "REST & GraphQL", route: "/rest-graph"),
+      TopicModel(title: "REST & GraphQL + Offline Handling & Caching", route: "/rest-graph"),
+      TopicModel(title: "GraphQL & WebSocket", route: "/graph-websocket"),
     ];
 
     return Scaffold(
