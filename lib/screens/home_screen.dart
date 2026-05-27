@@ -33,6 +33,8 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "Dependency Injection", route: "/dependency_injection"),
       TopicModel(title: "REST & GraphQL + Offline Handling & Caching", route: "/rest-graph"),
       TopicModel(title: "GraphQL & WebSocket", route: "/graph-websocket"),
+      TopicModel(title: "Secure Storage & Encryption", route: "/secure-vault"),
+      TopicModel(title: "App Security Best Practices", route: "/app-security"),
     ];
 
     return Scaffold(

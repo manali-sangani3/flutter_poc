@@ -54,6 +54,10 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [GraphQL & WebSocket Integration](#graphql--websocket-integration)
     - [Offline Handling & Caching](#offline-handling--caching)
 
+- [Security](#security)
+    - [Secure Storage & Encryption](#secure-storage--encryption)
+    - [Security Best Practices](#security-best-practices)
+    - [App Security Best Practices](#app-security-best-practices)
 
 - [Run Project](#run-project)
 
@@ -461,7 +465,9 @@ Applied Features:
 # Architecture & Design
 
 ## Dependency Injection & Service Locator Patterns
+
 Applied Features:
+
 - Dependency Injection (DI)
 - Service Locator Pattern
 - GetIt Integration
@@ -479,50 +485,95 @@ Applied Features:
 
 # REST API & GraphQL Integration
 
-Implemented:
-- REST API Integration
-- HTTP Networking
-- JSON Parsing
-- Async/Await API Calls
-- Repository Pattern
-- Service Layer Architecture
-- GraphQL Query Integration
-- GraphQL Mutation Integration
-- GraphQL Client Setup
-- Dynamic Query Variables
-- Loading/Error State Handling
-- Clean API Architecture
-- Reactive API Updates
+Applied Features:
+
+- GET API Requests
+- GraphQL Queries
+- GraphQL Mutations
+- Multiple API Client Handling
+- Async Data Fetching
+- Network Error Handling
+- Decoupled Networking Layer
+- Scalable API Structure
+- Repository-Service Separation
+- Real-time UI Updates
 - Token Refreshing
+- Authorization Header Handling
+- Simulated Authentication Flow
+- Auto Access Token Renewal
+- Retry Failed Requests
+- Secure API Architecture
 
 ---
 
 # GraphQL & WebSocket Integration
 
-Implemented:
-- GraphQL Queries
-- WebSocket Integration
-- Real-time Streaming
-- StreamBuilder
-- Async Reactive Updates
-- Repository Pattern
-- Service Layer Architecture
-- Dynamic Query Variables
-- Clean Networking Architecture
+Applied Features:
+
+- Live Data Streaming
+- Continuous UI Updates
+- Mutation-based Data Creation
+- GraphQL Client Integration
+- Real-time Text Simulation
+- Event-driven Architecture
+- Reactive State Handling
+- Stream-based UI Rendering
 
 ---
 
 # Offline Handling & Caching
 
+Applied Features:
+
+- Hive Local Storage
+- Cached Product Responses
+- Offline Data Loading
+- Async Local Persistence
+- API Fallback Handling
+- Local JSON Caching
+- Online/Offline Support
+
+---
+
+# Secure Storage & Encryption
+
 Implemented:
-- Hive NoSQL Database
-- Offline-first Architecture
-- API Response Caching
-- Local Persistent Storage
-- Network Failure Recovery
-- Cache-first Strategy
-- Repository Pattern
-- Resilient Networking Architecture
+
+- AES Encryption
+- Secure Local Storage
+- Sensitive Data Protection
+- Flutter Secure Storage
+- Encrypted Persistence
+- Secure Authentication Architecture
+- Secure Serialization
+- Local Data Encryption
+
+
+---
+
+# Security Best Practices
+
+Applied Features:
+- Flutter Secure Storage
+- Local Authentication
+- Secure API Token Handling
+- Protected Local Persistence
+- Secure Input Validation
+- Hidden API Secrets
+- Authentication Flow Security
+- Runtime Security Handling
+
+---
+
+# App Security Best Practices
+
+Applied Features:
+- Biometric Verification
+- Secure Token Persistence
+- Obfuscation Awareness
+- Session Protection
+- Secure API Architecture
+- Authentication Security Patterns
 
 ---
 

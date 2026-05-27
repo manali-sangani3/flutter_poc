@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_poc/inherited/app_state.dart';
 import 'package:flutter_poc/provider/app_provider.dart';
 import 'package:flutter_poc/screens/accessibility_localization_screen.dart';
@@ -12,6 +15,8 @@ import 'package:flutter_poc/screens/home_screen.dart';
 import 'package:flutter_poc/screens/inventory_screen.dart';
 import 'package:flutter_poc/screens/library_screen.dart';
 import 'package:flutter_poc/screens/movie_screen.dart';
+import 'package:flutter_poc/screens/secure_login_screen.dart';
+import 'package:flutter_poc/screens/secure_vault_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
 import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
@@ -27,9 +32,11 @@ import 'locator/service_locator.dart';
 import 'observer/app_bloc_observer.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // A centralized object that provides dependencies globally.
   setupLocator();
   Bloc.observer = AppBlocObserver();
+  await dotenv.load();
 
   await Hive.initFlutter();
 
@@ -128,6 +135,10 @@ class _MyAppState extends State<MyApp> {
                 '/rest-graph': (_) => MovieScreen(),
 
                 '/graph-websocket': (_) => CryptoScreen(),
+
+                '/secure-vault': (_) => const SecureVaultScreen(),
+
+                '/app-security': (_) => const SecureLoginScreen(),
               },
             );
           },

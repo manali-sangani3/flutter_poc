@@ -122,7 +122,7 @@ class _CryptoScreenState extends State<CryptoScreen> {
                       controller.clear();
                     },
 
-                    child: const Text("Sen"),
+                    child: const Text("Send"),
                   ),
                 ),
 
