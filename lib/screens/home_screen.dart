@@ -35,6 +35,9 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "GraphQL & WebSocket", route: "/graph-websocket"),
       TopicModel(title: "Secure Storage & Encryption", route: "/secure-vault"),
       TopicModel(title: "App Security Best Practices", route: "/app-security"),
+      TopicModel(title: "Testing Data & Security Practices", route: "/testing-data"),
+      TopicModel(title: "Platform Channels & Native SDKs", route: "/native-sdk"),
+      TopicModel(title: "Push Notifications & Background Tasks", route: "/notification"),
     ];
 
     return Scaffold(
