@@ -62,6 +62,7 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
 
 - [Platform & Native Integration](#platform--native-integration)
     - [Platform Channels & Native SDKs](#platform-channels--native-sdks)
+    - [Push Notifications & Background Tasks](#push-notifications--background-tasks)
   
 
 - [Run Project](#run-project)
@@ -609,6 +610,22 @@ Applied Features:
 - Platform SDK Integration
 - Native Device Capability Access
 - Cross-platform Architecture Understanding
+
+---
+
+# Push Notifications & Background Tasks
+
+Applied Features:
+- Push Notification Delivery
+- Local Device Notifications
+- Background Task Scheduling
+- Realtime Notification Updates
+- Device Token Registration
+- Foreground Notification Rendering
+- Background Processing Workflow
+- Scalable Notification Architecture
+- Terminated Notification
+- Payload
 
 ---
 

@@ -22,6 +22,7 @@ import 'package:flutter_poc/screens/secure_vault_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
 import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
+import 'package:flutter_poc/services/notification_service.dart';
 import 'package:flutter_poc/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -95,6 +96,7 @@ class _MyAppState extends State<MyApp> {
         child: BlocBuilder<LanguageCubit, Locale>(
           builder: (context, locale) {
             return MaterialApp(
+              navigatorKey: NotificationService.instance.navigatorKey,
               debugShowCheckedModeBanner: false,
 
               theme: AppTheme.lightTheme,

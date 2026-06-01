@@ -11,11 +11,13 @@ class NotificationDemoScreen extends StatefulWidget {
 }
 
 class _NotificationDemoScreenState extends State<NotificationDemoScreen> {
-  final service = NotificationService();
+  late final NotificationService service;
 
   @override
   void initState() {
     super.initState();
+
+    service = NotificationService.instance;
 
     initialize();
   }
@@ -23,9 +25,8 @@ class _NotificationDemoScreenState extends State<NotificationDemoScreen> {
   Future<void> initialize() async {
     await service.initialize();
 
-    Workmanager().registerPeriodicTask(
+    await Workmanager().registerPeriodicTask(
       "sync-task",
-
       "backgroundSync",
 
       frequency: const Duration(minutes: 15),
