@@ -63,6 +63,7 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
 - [Platform & Native Integration](#platform--native-integration)
     - [Platform Channels & Native SDKs](#platform-channels--native-sdks)
     - [Push Notifications & Background Tasks](#push-notifications--background-tasks)
+    - [Audio/Video Integration](#audiovideo-integration)
   
 
 - [Run Project](#run-project)
@@ -626,6 +627,27 @@ Applied Features:
 - Scalable Notification Architecture
 - Terminated Notification
 - Payload
+
+---
+
+## Audio/Video Integration
+
+Applied Features:
+- Network Audio Playback
+- Network Video Playback
+- Audio Playlist Selection
+- Video Playlist Selection
+- Play/Pause/Stop Controls
+- Audio Position Tracking
+- Video Progress Tracking
+- Seek Functionality
+- Playback Speed Adjustment
+- Fullscreen Video Experience
+- Dynamic Media Source Switching
+- Controller Disposal & Resource Management
+- Loading State Handling
+- Error Handling for Media Playback
+- Scalable Media Architecture
 
 ---
 
