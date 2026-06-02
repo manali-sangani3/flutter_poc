@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,10 @@ class NotificationService {
     );
 
     await localNotifications.initialize(
-      settings: const InitializationSettings(android: androidSettings),
+      settings: const InitializationSettings(
+        android: androidSettings,
+        iOS: DarwinInitializationSettings(),
+      ),
 
       onDidReceiveNotificationResponse: (response) {
         if (response.payload != null) {
@@ -45,10 +49,11 @@ class NotificationService {
     if (initialMessage != null) {
       _handleNotificationTap(initialMessage);
     }
+    if (Platform.isAndroid) {
+      final token = await messaging.getToken();
 
-    final token = await messaging.getToken();
-
-    debugPrint("FCM Token: $token");
+      debugPrint("FCM Token: $token");
+    }
   }
 
   Future<void> showForegroundNotification(RemoteMessage message) async {

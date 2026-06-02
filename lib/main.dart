@@ -13,6 +13,7 @@ import 'package:flutter_poc/screens/expense_screen.dart';
 import 'package:flutter_poc/screens/home_screen.dart';
 import 'package:flutter_poc/screens/inventory_screen.dart';
 import 'package:flutter_poc/screens/library_screen.dart';
+import 'package:flutter_poc/screens/media_screen.dart';
 import 'package:flutter_poc/screens/movie_screen.dart';
 import 'package:flutter_poc/screens/native_sdk_screen.dart';
 import 'package:flutter_poc/screens/notification_demo_screen.dart';
@@ -153,6 +154,8 @@ class _MyAppState extends State<MyApp> {
                 '/native-sdk': (_) => const NativeSdkScreen(),
 
                 '/notification': (_) => const NotificationDemoScreen(),
+
+                '/audio-video': (_) => const MediaScreen(),
               },
             );
           },
