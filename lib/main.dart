@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -17,6 +18,8 @@ import 'package:flutter_poc/screens/media_screen.dart';
 import 'package:flutter_poc/screens/movie_screen.dart';
 import 'package:flutter_poc/screens/native_sdk_screen.dart';
 import 'package:flutter_poc/screens/notification_demo_screen.dart';
+import 'package:flutter_poc/screens/payment_screen.dart';
+import 'package:flutter_poc/screens/sdk_screen.dart';
 import 'package:flutter_poc/screens/secure_login_screen.dart';
 import 'package:flutter_poc/screens/secure_testing_screen.dart';
 import 'package:flutter_poc/screens/secure_vault_screen.dart';
@@ -26,6 +29,7 @@ import 'package:flutter_poc/screens/todo_screen.dart';
 import 'package:flutter_poc/services/notification_service.dart';
 import 'package:flutter_poc/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:workmanager/workmanager.dart';
@@ -40,7 +44,11 @@ import 'services/background_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  Stripe.publishableKey =
+      'pk_test_51Te7FwLSVSY0qmjkJ5B1aR9OjIKGhkgtKyhHkVZ5aNjQk5nl2kjwt4sCe8DtbsXbTjETRv4FlJ3nLzhb70tYmZhS00DO5Xzyi0';
 
+  await Stripe.instance.applySettings();
   Workmanager().initialize(callbackDispatcher);
   // A centralized object that provides dependencies globally.
   setupLocator();
@@ -156,6 +164,10 @@ class _MyAppState extends State<MyApp> {
                 '/notification': (_) => const NotificationDemoScreen(),
 
                 '/audio-video': (_) => const MediaScreen(),
+
+                '/sdk-screen': (_) => const SdkScreen(),
+
+                '/payment-screen': (_) => const PaymentDemoScreen(),
               },
             );
           },

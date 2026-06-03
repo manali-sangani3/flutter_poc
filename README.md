@@ -64,6 +64,7 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [Platform Channels & Native SDKs](#platform-channels--native-sdks)
     - [Push Notifications & Background Tasks](#push-notifications--background-tasks)
     - [Audio/Video Integration](#audiovideo-integration)
+    - [Advanced Third-Party SDK Integration](#advanced-third-party-sdk-integration)
   
 
 - [Run Project](#run-project)
@@ -648,6 +649,21 @@ Applied Features:
 - Loading State Handling
 - Error Handling for Media Playback
 - Scalable Media Architecture
+
+---
+
+## Advanced Third-Party SDK Integration
+
+Applied Features:
+- Firebase Analytics Integration
+- Firebase Crashlytics Integration
+- Firebase Cloud Messaging (FCM)
+- Stripe Payment SDK Integration
+- Device Information SDK Integration
+- Background Notification Handling
+- Service Locator Integration
+- SDK Initialization at App Startup
+- Monitoring & Logging
 
 ---
 
