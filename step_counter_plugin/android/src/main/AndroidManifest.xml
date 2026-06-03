@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+  package="com.example.step_counter_plugin">
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
+</manifest>

@@ -40,6 +40,7 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "Push Notifications & Background Tasks", route: "/notification"),
       TopicModel(title: "Audio & Video Integration", route: "/audio-video"),
       TopicModel(title: "Advanced Third-Party SDK Integration", route: "/sdk-screen"),
+      TopicModel(title: "Plugin Development & Usage", route: "/plugin"),
     ];
 
     return Scaffold(

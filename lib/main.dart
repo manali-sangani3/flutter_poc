@@ -24,6 +24,7 @@ import 'package:flutter_poc/screens/secure_login_screen.dart';
 import 'package:flutter_poc/screens/secure_testing_screen.dart';
 import 'package:flutter_poc/screens/secure_vault_screen.dart';
 import 'package:flutter_poc/screens/settings_screen.dart';
+import 'package:flutter_poc/screens/step_counter_screen.dart';
 import 'package:flutter_poc/screens/task_screen.dart';
 import 'package:flutter_poc/screens/todo_screen.dart';
 import 'package:flutter_poc/services/notification_service.dart';
@@ -168,6 +169,8 @@ class _MyAppState extends State<MyApp> {
                 '/sdk-screen': (_) => const SdkScreen(),
 
                 '/payment-screen': (_) => const PaymentDemoScreen(),
+
+                '/plugin': (_) => const StepCounterScreen(),
               },
             );
           },
