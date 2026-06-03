@@ -35,7 +35,11 @@ import FirebaseCore
     ) {
 
         /// Register Flutter Plugins
-        GeneratedPluginRegistrant.register(with: self)
+        GeneratedPluginRegistrant
+            .register(
+                with:
+                engineBridge.pluginRegistry
+            )
 
         /// Create Registrar
         let registrar =
