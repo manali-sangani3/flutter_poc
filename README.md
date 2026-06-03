@@ -65,6 +65,7 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [Push Notifications & Background Tasks](#push-notifications--background-tasks)
     - [Audio/Video Integration](#audiovideo-integration)
     - [Advanced Third-Party SDK Integration](#advanced-third-party-sdk-integration)
+    - [Plugin Development & Usage](#plugin-development--usage)
   
 
 - [Run Project](#run-project)
@@ -664,6 +665,25 @@ Applied Features:
 - Service Locator Integration
 - SDK Initialization at App Startup
 - Monitoring & Logging
+
+---
+
+# Plugin Development & Usage
+
+## Applied Features
+
+- Custom Step Counter Plugin
+- EventChannel Data Streaming
+- Native Kotlin Event Generation
+- Real-Time Step Updates
+- Simulated Step Counter for Emulator Testing
+- Flutter Stream Subscription
+- StreamBuilder Integration
+- Plugin Initialization
+- Plugin Cleanup & Disposal
+- Memory Leak Prevention
+- Mounted State Validation
+- Automatic UI Updates
 
 ---
 
