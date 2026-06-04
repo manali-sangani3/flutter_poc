@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../model/topic_model.dart';
@@ -31,16 +33,36 @@ class HomeScreen extends StatelessWidget {
       TopicModel(title: "Riverpod State Management", route: "/riverpod"),
       TopicModel(title: "MobX State Management", route: "/mobx"),
       TopicModel(title: "Dependency Injection", route: "/dependency_injection"),
-      TopicModel(title: "REST & GraphQL + Offline Handling & Caching", route: "/rest-graph"),
+      TopicModel(
+        title: "REST & GraphQL + Offline Handling & Caching",
+        route: "/rest-graph",
+      ),
       TopicModel(title: "GraphQL & WebSocket", route: "/graph-websocket"),
       TopicModel(title: "Secure Storage & Encryption", route: "/secure-vault"),
       TopicModel(title: "App Security Best Practices", route: "/app-security"),
-      TopicModel(title: "Testing Data & Security Practices", route: "/testing-data"),
-      TopicModel(title: "Platform Channels & Native SDKs", route: "/native-sdk"),
-      TopicModel(title: "Push Notifications & Background Tasks", route: "/notification"),
+      TopicModel(
+        title: "Testing Data & Security Practices",
+        route: "/testing-data",
+      ),
+      TopicModel(
+        title: "Platform Channels & Native SDKs",
+        route: "/native-sdk",
+      ),
+      TopicModel(
+        title: "Push Notifications & Background Tasks",
+        route: "/notification",
+      ),
       TopicModel(title: "Audio & Video Integration", route: "/audio-video"),
-      TopicModel(title: "Advanced Third-Party SDK Integration", route: "/sdk-screen"),
-      TopicModel(title: "Plugin Development & Usage", route: "/plugin"),
+      TopicModel(
+        title: "Advanced Third-Party SDK Integration",
+        route: "/sdk-screen",
+      ),
+      if (Platform.isAndroid)
+        TopicModel(title: "Plugin Development & Usage", route: "/plugin"),
+      TopicModel(
+        title: "Native Performance Optimization",
+        route: "/native-performance",
+      ),
     ];
 
     return Scaffold(

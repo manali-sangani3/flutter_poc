@@ -19,6 +19,7 @@ import 'package:flutter_poc/screens/movie_screen.dart';
 import 'package:flutter_poc/screens/native_sdk_screen.dart';
 import 'package:flutter_poc/screens/notification_demo_screen.dart';
 import 'package:flutter_poc/screens/payment_screen.dart';
+import 'package:flutter_poc/screens/performance_screen.dart';
 import 'package:flutter_poc/screens/sdk_screen.dart';
 import 'package:flutter_poc/screens/secure_login_screen.dart';
 import 'package:flutter_poc/screens/secure_testing_screen.dart';
@@ -171,6 +172,8 @@ class _MyAppState extends State<MyApp> {
                 '/payment-screen': (_) => const PaymentDemoScreen(),
 
                 '/plugin': (_) => const StepCounterScreen(),
+
+                '/native-performance': (_) => const PerformanceScreen(),
               },
             );
           },

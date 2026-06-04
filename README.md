@@ -66,6 +66,7 @@ A simple Flutter demo application created to showcase multiple Dart and Flutter 
     - [Audio/Video Integration](#audiovideo-integration)
     - [Advanced Third-Party SDK Integration](#advanced-third-party-sdk-integration)
     - [Plugin Development & Usage](#plugin-development--usage)
+    - [Native Performance Optimization](#native-performance-optimization)
   
 
 - [Run Project](#run-project)
@@ -684,6 +685,21 @@ Applied Features:
 - Memory Leak Prevention
 - Mounted State Validation
 - Automatic UI Updates
+
+---
+
+# Native Performance Optimization
+
+## Applied Features
+
+- Native Sum Calculation
+- Large Dataset Processing
+- MethodChannel Communication
+- Performance Benchmarking
+- Execution Time Tracking
+- UI Responsiveness Preservation
+- Native Processing Workflow
+- Flutter Result Handling
 
 ---
 

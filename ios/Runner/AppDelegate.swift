@@ -7,23 +7,22 @@ import FirebaseCore
     FlutterAppDelegate,
     FlutterImplicitEngineDelegate {
 
-    private let channelName =
+    private let deviceChannelName =
         "native/device"
+
+    private let performanceChannelName =
+        "native/performance"
 
     override func application(
         _ application: UIApplication,
-
-        didFinishLaunchingWithOptions
-        launchOptions:
+        didFinishLaunchingWithOptions launchOptions:
             [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-        /// Firebase Initialization
         FirebaseApp.configure()
 
         return super.application(
             application,
-
             didFinishLaunchingWithOptions:
             launchOptions
         )
@@ -34,70 +33,105 @@ import FirebaseCore
             FlutterImplicitEngineBridge
     ) {
 
-        /// Register Flutter Plugins
-        GeneratedPluginRegistrant
-            .register(
-                with:
-                engineBridge.pluginRegistry
-            )
+        GeneratedPluginRegistrant.register(
+            with: engineBridge.pluginRegistry
+        )
 
-        /// Create Registrar
-        let registrar =
-            engineBridge
-                .pluginRegistry
-                .registrar(
-                    forPlugin:
-                    "native_device_plugin"
-                )
+        guard let registrar =
+        engineBridge.pluginRegistry.registrar(
+            forPlugin: "native_plugin"
+        )
+        else {
+            return
+        }
 
-        /// Create MethodChannel
-        let methodChannel =
+        // Device Channel
+        let deviceChannel =
             FlutterMethodChannel(
-                name: channelName,
-
+                name: deviceChannelName,
                 binaryMessenger:
-                registrar!.messenger()
+                registrar.messenger()
             )
 
-        /// Handle Flutter Calls
-        methodChannel
-            .setMethodCallHandler {
-                (
-                    call,
-                    result
-                ) in
+        deviceChannel.setMethodCallHandler {
+            (call, result) in
 
-                switch call.method {
+            switch call.method {
 
-                case "getBattery":
+            case "getBattery":
 
-                    UIDevice.current
-                        .isBatteryMonitoringEnabled =
-                        true
+                UIDevice.current
+                    .isBatteryMonitoringEnabled = true
 
-                    let batteryLevel =
-                        Int(
-                            UIDevice.current
-                                .batteryLevel * 100
-                        )
-
-                    result(
-                        "\(batteryLevel)%"
+                let batteryLevel =
+                    Int(
+                        UIDevice.current
+                            .batteryLevel * 100
                     )
 
-                case "getDeviceInfo":
+                result("\(batteryLevel)%")
 
-                    let deviceInfo =
-                        "\(UIDevice.current.systemName) \(UIDevice.current.systemVersion)"
+            case "getDeviceInfo":
 
-                    result(deviceInfo)
+                let deviceInfo =
+                    "\(UIDevice.current.systemName) \(UIDevice.current.systemVersion)"
 
-                default:
+                result(deviceInfo)
 
-                    result(
-                        FlutterMethodNotImplemented
-                    )
-                }
+            default:
+
+                result(
+                    FlutterMethodNotImplemented
+                )
             }
+        }
+
+        // Performance Channel
+        let performanceChannel =
+            FlutterMethodChannel(
+                name: performanceChannelName,
+                binaryMessenger:
+                registrar.messenger()
+            )
+
+        performanceChannel.setMethodCallHandler {
+            (call, result) in
+
+            switch call.method {
+
+            case "calculateSum":
+
+                guard let args =
+                call.arguments as? [String: Any],
+                      let count =
+                      args["count"] as? Int
+                else {
+
+                    result(
+                        FlutterError(
+                            code: "INVALID_ARGUMENT",
+                            message: "Count not provided",
+                            details: nil
+                        )
+                    )
+
+                    return
+                }
+
+                var sum: Int64 = 0
+
+                for i in 1...count {
+                    sum += Int64(i)
+                }
+
+                result(sum)
+
+            default:
+
+                result(
+                    FlutterMethodNotImplemented
+                )
+            }
+        }
     }
 }

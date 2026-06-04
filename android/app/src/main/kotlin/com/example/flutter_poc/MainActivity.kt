@@ -12,8 +12,11 @@ import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterFragmentActivity() {
 
-    private val CHANNEL =
+    private val DEVICE_CHANNEL =
         "native/device"
+
+    private val PERFORMANCE_CHANNEL =
+        "native/performance"
 
     override fun configureFlutterEngine(
         flutterEngine: FlutterEngine
@@ -23,13 +26,13 @@ class MainActivity : FlutterFragmentActivity() {
             flutterEngine
         )
 
+        // Device Channel
         MethodChannel(
             flutterEngine
                 .dartExecutor
                 .binaryMessenger,
-            CHANNEL
-        ).setMethodCallHandler { call,
-                                 result ->
+            DEVICE_CHANNEL
+        ).setMethodCallHandler { call, result ->
 
             when (call.method) {
 
@@ -53,10 +56,37 @@ class MainActivity : FlutterFragmentActivity() {
                     )
                 }
 
-                else -> {
+                else -> result.notImplemented()
+            }
+        }
 
-                    result.notImplemented()
+        // Performance Channel
+        MethodChannel(
+            flutterEngine
+                .dartExecutor
+                .binaryMessenger,
+            PERFORMANCE_CHANNEL
+        ).setMethodCallHandler { call, result ->
+
+            when (call.method) {
+
+                "calculateSum" -> {
+
+                    val count =
+                        call.argument<Int>(
+                            "count"
+                        ) ?: 0
+
+                    var sum = 0L
+
+                    for (i in 1..count) {
+                        sum += i
+                    }
+
+                    result.success(sum)
                 }
+
+                else -> result.notImplemented()
             }
         }
     }
