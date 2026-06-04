@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../services/analytics_service.dart';
@@ -9,7 +11,6 @@ class SdkScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AnalyticsService analytics = AnalyticsService();
-    CrashlyticsService crashService = CrashlyticsService();
     return Scaffold(
       appBar: AppBar(title: const Text("Third party SDK")),
 
@@ -26,16 +27,17 @@ class SdkScreen extends StatelessWidget {
               child: const Text('Track Event (Analytics)'),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 12),
 
+            if(Platform.isAndroid)
             ElevatedButton(
               onPressed: () {
-                crashService.crash();
+                CrashlyticsService.testCrash();
               },
 
               child: const Text('Generate Error (Crashlytics)'),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 12),
 
             ElevatedButton(
               onPressed: () {

@@ -61,6 +61,7 @@ dependencies:
   flutter_stripe: ^12.6.0
   step_counter_plugin:
     path: ./step_counter_plugin
+  logger: ^2.7.0
 
 dev_dependencies:
   flutter_test:

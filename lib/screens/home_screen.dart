@@ -63,6 +63,10 @@ class HomeScreen extends StatelessWidget {
         title: "Native Performance Optimization",
         route: "/native-performance",
       ),
+      TopicModel(
+        title: "Logging & Monitoring",
+        route: "/logging",
+      ),
     ];
 
     return Scaffold(
