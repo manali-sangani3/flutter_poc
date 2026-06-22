@@ -109,6 +109,7 @@ class _MyAppState extends State<MyApp> {
           builder: (context, locale) {
             return MaterialApp(
               navigatorKey: NotificationService.instance.navigatorKey,
+              // showPerformanceOverlay: true,
               debugShowCheckedModeBanner: false,
 
               theme: AppTheme.lightTheme,

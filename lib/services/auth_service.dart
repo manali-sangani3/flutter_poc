@@ -18,4 +18,8 @@ class AuthService {
   Future<bool> authenticate() async {
     return auth.authenticate(localizedReason: 'Authenticate to continue');
   }
+
+  bool validateLogin(String email, String password) {
+    return email.isNotEmpty && password.length >= 6;
+  }
 }
