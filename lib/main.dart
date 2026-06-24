@@ -15,6 +15,7 @@ import 'package:flutter_poc/screens/home_screen.dart';
 import 'package:flutter_poc/screens/inventory_screen.dart';
 import 'package:flutter_poc/screens/library_screen.dart';
 import 'package:flutter_poc/screens/logging_demo_screen.dart';
+import 'package:flutter_poc/screens/login_screen.dart';
 import 'package:flutter_poc/screens/media_screen.dart';
 import 'package:flutter_poc/screens/movie_screen.dart';
 import 'package:flutter_poc/screens/native_sdk_screen.dart';
@@ -178,6 +179,8 @@ class _MyAppState extends State<MyApp> {
                 '/native-performance': (_) => const PerformanceScreen(),
 
                 '/logging': (_) => const LoggingDemoScreen(),
+
+                '/advanced-testing-TDD-demo': (_) => const LoginScreen(),
               },
             );
           },
